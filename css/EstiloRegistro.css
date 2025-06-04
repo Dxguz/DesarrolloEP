@@ -171,62 +171,34 @@ main{
 
 
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 850px){
 
-  main {
-    margin-top: 80px;
-    padding: 0 10px;
-  }
+    main{
+        margin-top: 50px;
+    }
 
-  .contenedor__todo {
-    max-width: 100%;
-    overflow: hidden;
-  }
+    .caja__trasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
 
-  .caja__trasera {
-    flex-direction: column;
-    height: auto;
-    padding: 20px 10px;
-    background-color: rgba(0, 255, 136, 0.7);
-  }
+    .caja__trasera div{
+        margin: 0px;
+        position: absolute;
+    }
 
-  .caja__trasera div {
-    position: static;
-    margin: 10px 0;
-    text-align: center;
-  }
 
-  .contenedor__login-register {
-    flex-direction: column;
-    align-items: center;
-    top: 0;
-    left: 0;
-    transition: none;
-    max-width: 100%;
-  }
+    /*Formularios*/
 
-  .contenedor__login-register form {
-    position: static;
-    width: 100%;
-    padding: 40px 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-  }
+    .contenedor__login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
 
-  .contenedor__login-register form button {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .formulario__login,
-  .formulario__register {
-    display: none;
-    opacity: 0;
-  }
-
-  .formulario__login.active,
-  .formulario__register.active {
-    display: block;
-    opacity: 1;
-  }
+    .contenedor__login-register form{
+        position: relative;
+    }
 }
