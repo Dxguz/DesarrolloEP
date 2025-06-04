@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel CultiVida</title>
+  <link rel="stylesheet" href="css/EstilosPerfilesProfesionales.css" />
+    
+</head>
+<body>
+  <header class="top-banner">
+    <h2>Agricultor, bienvenido a CultiVida</h2>
+    <nav class="nav-menu">
+      <a href="Chatbot.html"><button>Chatbot CultiVida</button></a>
+      <a href="PerfilesProfesionales.html"><button>Perfiles Profesionales</button></a>
+      <a href="ChatsProfesionales.html"><button>Chats con Profesionales</button></a>
+      <a href="Eventos.html"><button>Eventos</button></a>
+      <a href="Comunidad.html"><button>Comunidad</button></a>
+      <a href="NotifAgricultor.html"><button>Notificaciones</button></a>
+      <a href="index.html"><button>Home</button></a>
+
+      <!-- Contenedor perfil -->
+      <div class="profile-button-container" id="profile-container">
+  <button class="profile-button" id="profile-button" aria-label="Perfil de usuario">
+    👤
+  </button>
+  <div class="profile-menu" id="profile-menu">
+    <a href="#">Configuración de perfil</a>
+    <a href="RegistroAgricultor.html">Cerrar sesión</a>
+  </div>
+</div>
+
+    </nav>
+  </header>
+
+<!-- PROFESIONALES -->
+    <section id="profesionales" class="section-profesionales">
+      <h2>Profesionales Agrícolas Disponibles</h2>
+      <div class="profesionales-container">
+        <!-- Profesional 1 -->
+        <div class="profesional-card">
+          <img src="img/Perfil1_Profesional.jpg" alt="Perfil1">
+          <h3>Ing. María Pérez</h3>
+          <p><strong>Profesión:</strong> Ingeniera Agrónoma</p>
+          <p><strong>Especialidad:</strong> Manejo de plagas en cultivos de papa</p>
+          <p><strong>Disponibilidad:</strong> Lunes a Viernes, 8am - 5pm</p>
+          <a href="#" class="contactar-btn">Contactar</a>
+        </div>
+
+        <!-- Profesional 2 -->
+        <div class="profesional-card">
+          <img src="img/Perfil2_Profesional.jpg" alt="Perfil2">
+          <h3>Dr. Juan Agrónomo</h3>
+          <p><strong>Profesión:</strong> Doctor en Agronomía</p>
+          <p><strong>Especialidad:</strong> Fertilización de suelos</p>
+          <p><strong>Disponibilidad:</strong> Martes, Jueves y Sábado, 9am - 3pm</p>
+          <a href="#" class="contactar-btn">Contactar</a>
+        </div>
+
+        <!-- Profesional 3 -->
+        <div class="profesional-card">
+          <img src="img/Perfil3_Profesional.jpg" alt="Perfil3">
+          <h3>Lic. Carolina Ríos</h3>
+          <p><strong>Profesión:</strong> Licenciada en Ingeniería Ambiental</p>
+          <p><strong>Especialidad:</strong> Sistemas de riego tecnificado</p>
+          <p><strong>Disponibilidad:</strong> Lunes a Sábado, 7am - 4pm</p>
+          <a href="#" class="contactar-btn">Contactar</a>
+        </div>
+      </div>
+    </section>
+
+<script src="js/ScriptsChatbot.js"></script>
+  <script>
+    // Mostrar/ocultar menú perfil
+    const profileButton = document.getElementById("profile-button");
+    const profileMenu = document.getElementById("profile-menu");
+
+    profileButton.addEventListener("click", () => {
+      if (profileMenu.style.display === "block") {
+        profileMenu.style.display = "none";
+      } else {
+        profileMenu.style.display = "block";
+      }
+    });
+
+    // Ocultar menú si se hace clic fuera
+    document.addEventListener("click", (e) => {
+      if (!document.getElementById("profile-container").contains(e.target)) {
+        profileMenu.style.display = "none";
+      }
+    });
+  </script>

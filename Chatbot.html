@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel CultiVida</title>
+  <link rel="stylesheet" href="css/EstilosChatbot.css" />
+    
+</head>
+<body>
+  <header class="top-banner">
+    <h2>Agricultor, bienvenido a CultiVida</h2>
+    <nav class="nav-menu">
+      <a href="Chatbot.html"><button>Chatbot CultiVida</button></a>
+      <a href="PerfilesProfesionales.html"><button>Perfiles Profesionales</button></a>
+      <a href="ChatsProfesionales.html"><button>Chats con Profesionales</button></a>
+      <a href="Eventos.html"><button>Eventos</button></a>
+      <a href="Comunidad.html"><button>Comunidad</button></a>
+      <a href="NotifAgricultor.html"><button>Notificaciones</button></a>
+      <a href="index.html"><button>Home</button></a>
+
+      <!-- Contenedor perfil -->
+      <div class="profile-button-container" id="profile-container">
+  <button class="profile-button" id="profile-button" aria-label="Perfil de usuario">
+    👤
+  </button>
+  <div class="profile-menu" id="profile-menu">
+    <a href="#">Configuración de perfil</a>
+    <a href="RegistroAgricultor.html">Cerrar sesión</a>
+  </div>
+</div>
+
+    </nav>
+  </header>
+
+  <main class="main-chat">
+    <div class="chat-box" id="chat-box">
+      <div class="chat-message notice">
+        Al continuar esta conversación aceptas el tratamiento de datos personales.
+      </div>
+      <!-- Ejemplo de mensaje bot con foto de perfil -->
+      <div class="chat-message bot-message">
+        <div class="chatbot-profile-pic"></div>
+        <div class="message-text">
+          ¡Soy el chatbot de CultiVida, estoy aquí para ayudarte con tu cultivo.!
+        </div>
+      </div>
+      <div id="messages"></div>
+    </div>
+
+    <form id="initial-form" enctype="multipart/form-data">
+      <h4>Por favor completa la información de tu cultivo:</h4>
+      <input type="text" id="nombre" placeholder="Nombre" required />
+      <input type="text" id="apellido" placeholder="Apellido" required />
+
+      <select id="ubicacion" required>
+        <option value="" disabled selected>Selecciona tu municipio</option>
+        <option value="Carmen de Carupa">Carmen de Carupa</option>
+        <option value="Cucunubá">Cucunubá</option>
+        <option value="Fúquene">Fúquene</option>
+        <option value="Guachetá">Guachetá</option>
+        <option value="Lenguazaque">Lenguazaque</option>
+        <option value="Simijaca">Simijaca</option>
+        <option value="Susa">Susa</option>
+        <option value="Sutatausa">Sutatausa</option>
+        <option value="Tausa">Tausa</option>
+        <option value="Ubaté">Ubaté</option>
+      </select>
+
+      <select id="cultivo" required>
+        <option value="" disabled selected>Selecciona el tipo de cultivo</option>
+        <option value="Papa">Papa</option>
+        <option value="Arveja">Arveja</option>
+        <option value="Maíz">Maíz</option>
+      </select>
+
+      <textarea id="problema" placeholder="Describe el problema" required></textarea>
+
+      <label for="imagen">Opcional: Sube una imagen del problema</label>
+      <input type="file" id="imagen" accept="image/*" />
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="chat-input" id="chat-input-area" style="display: none;">
+      <input type="text" id="message-input" placeholder="Escribe tu mensaje..." />
+      <input type="file" id="chat-image" accept="image/*" />
+      <button id="send-btn">Enviar</button>
+    </div>
+  </main>
+
+  <script src="frontend/ScriptsChatbot.js"></script>
+  <script type="module" src="frontend/formHandler.js"></script>
+
+  <script>
+    // Mostrar/ocultar menú perfil
+    const profileButton = document.getElementById("profile-button");
+    const profileMenu = document.getElementById("profile-menu");
+
+    profileButton.addEventListener("click", () => {
+      if (profileMenu.style.display === "block") {
+        profileMenu.style.display = "none";
+      } else {
+        profileMenu.style.display = "block";
+      }
+    });
+
+    // Ocultar menú si se hace clic fuera
+    document.addEventListener("click", (e) => {
+      if (!document.getElementById("profile-container").contains(e.target)) {
+        profileMenu.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eventos Agrícolas | CultiVida</title>
+  <link rel="stylesheet" href="css/EstilosEventos.css" />
+</head>
+<body>
+
+  <header class="top-banner">
+    <h2>Agricultor, bienvenido a CultiVida</h2>
+    <nav class="nav-menu">
+      <a href="Chatbot.html"><button>Chatbot CultiVida</button></a>
+      <a href="PerfilesProfesionales.html"><button>Perfiles Profesionales</button></a>
+      <a href="ChatsProfesionales.html"><button>Chats con Profesionales</button></a>
+      <a href="Eventos.html"><button>Eventos</button></a>
+      <a href="Comunidad.html"><button>Comunidad</button></a>
+      <a href="NotifAgricultor.html"><button>Notificaciones</button></a>
+      <a href="index.html"><button>Home</button></a>
+
+      <div class="profile-button-container" id="profile-container">
+        <button class="profile-button" id="profile-button" aria-label="Perfil de usuario">👤</button>
+        <div class="profile-menu" id="profile-menu">
+          <a href="#">Configuración de perfil</a>
+          <a href="RegistroAgricultor.html">Cerrar sesión</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="eventos-container">
+    <h1 class="eventos-title">📰 Eventos Agrícolas Destacados</h1>
+
+    <section class="evento-card">
+      <img src="img/Evento1.jpg" alt="Evento1" class="evento-img" />
+      <div class="evento-info">
+        <h2>Feria de Papa en Ubaté</h2>
+        <p class="fecha-lugar">📅 25 de mayo | 📍 Plaza principal de Ubaté</p>
+        <p>Participa en esta feria donde productores locales presentarán resultados de sus cultivos y habrá talleres sobre agricultura sostenible.</p>
+      </div>
+    </section>
+
+    <section class="evento-card">
+      <img src="img/Evento2.jpg" alt="Evento2" class="evento-img" />
+      <div class="evento-info">
+        <h2>Capacitación: Uso eficiente del agua en cultivos</h2>
+        <p class="fecha-lugar">📅 30 de mayo | 📍 Universidad de Cundinamarca</p>
+        <p>Aprende técnicas modernas para el riego de tus cultivos, conservación de fuentes hídricas y cuidado del medio ambiente.</p>
+      </div>
+    </section>
+
+    <section class="evento-card">
+      <img src="img/Evento3.jpg" alt="Evento3" class="evento-img" />
+      <div class="evento-info">
+        <h2>Encuentro de mujeres rurales líderes</h2>
+        <p class="fecha-lugar">📅 3 de junio | 📍 Casa de la Cultura</p>
+        <p>Evento con charlas motivacionales, experiencias exitosas de liderazgo femenino en el campo y estrategias de apoyo comunitario.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Mostrar/ocultar menú perfil
+    const profileButton = document.getElementById("profile-button");
+    const profileMenu = document.getElementById("profile-menu");
+
+    profileButton.addEventListener("click", () => {
+      if (profileMenu.style.display === "block") {
+        profileMenu.style.display = "none";
+      } else {
+        profileMenu.style.display = "block";
+      }
+    });
+
+    // Ocultar menú si se hace clic fuera
+    document.addEventListener("click", (e) => {
+      if (!document.getElementById("profile-container").contains(e.target)) {
+        profileMenu.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

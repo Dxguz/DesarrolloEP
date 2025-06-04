@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Agricultor - Cultivida</title>
+  <link rel="stylesheet" href="css/EstilosComunidad.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Banner de navegación -->
+  <header class="top-banner">
+    <h2>Agricultor, bienvenido a CultiVida</h2>
+    <nav class="nav-menu">
+      <a href="Chatbot.html"><button>Chatbot CultiVida</button></a>
+      <a href="PerfilesProfesionales.html"><button>Perfiles Profesionales</button></a>
+      <a href="ChatsProfesionales.html"><button>Chats con Profesionales</button></a>
+      <a href="Eventos.html"><button>Eventos</button></a>
+      <a href="Comunidad.html"><button>Comunidad</button></a>
+      <a href="NotifAgricultor.html"><button>Notificaciones</button></a>
+      <a href="index.html"><button>Home</button></a>
+
+      <div class="profile-button-container" id="profile-container">
+        <button class="profile-button" id="profile-button" aria-label="Perfil de usuario">👤</button>
+        <div class="profile-menu" id="profile-menu">
+          <a href="#">Configuración de perfil</a>
+          <a href="RegistroAgricultor.html">Cerrar sesión</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- COMUNIDAD -->
+
+      <section id="comunidad" class="Comunidad">
+        <h2>Comunidad </h2>
+        <div class="profesionales-container"></div>
+
+        <!-- Publicar nuevo comentario -->
+        <div class="nueva-publicacion">
+          <textarea placeholder="Escribe tu mensaje aquí..."></textarea>
+          <input type="file" accept="image/*">
+          <button>Publicar</button>
+        </div>
+
+        <!-- Lista de comentarios -->
+        <ul class="comentarios">
+          <li class="comentario">
+            <div class="usuario">
+              <strong>Pedro Londoño</strong> <span class="insignia">🌟 Participante Activo</span>
+            </div>
+            <p>Gracias a Cultivida, logré tener una cosecha exitosa.</p>
+            <img src="img/ComunidadAlverja.jpg" alt="imagen subida" class="img-subida">
+
+            <div class="interaccion">
+              <button class="like"><i class="fas fa-thumbs-up"></i> Me gusta</button>
+              <button class="comment"><i class="fas fa-comment"></i> Comentar</button>
+              <button class="share"><i class="fas fa-share"></i> Compartir</button>
+            </div>
+
+            <!-- Respuesta -->
+            <ul class="respuestas">
+              <li>
+                <div><strong>Rosa Pérez:</strong> ¡Excelente Pedro!</div>
+              </li>
+            </ul>
+
+            <!-- Campo de respuesta -->
+            <div class="respuesta-form">
+              <input type="text" placeholder="Responder a este comentario...">
+              <button>Enviar</button>
+            </div>
+          </li>
+
+          <!-- Otro comentario -->
+          <li class="comentario">
+            <div class="usuario">
+              <strong>María Salazar</strong>
+            </div>
+            <p>¿Qué fungicida recomiendan para la polilla en la papa?</p>
+            <div class="interaccion">
+              <span>⭐️⭐️⭐️☆☆</span>
+              <button class="like">👍</button>
+              <button class="dislike">👎</button>
+              <button class="responder-btn">Responder</button>
+            </div>
+
+            <ul class="respuestas"></ul>
+            <div class="respuesta-form">
+              <input type="text" placeholder="Responder a este comentario...">
+              <button>Enviar</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+  </main>
+
+  <script src="frontend/ComunidadInteraccion.js"></script>
+
+  <script>
+    // Mostrar/ocultar menú perfil
+    const profileButton = document.getElementById("profile-button");
+    const profileMenu = document.getElementById("profile-menu");
+
+    profileButton.addEventListener("click", () => {
+      if (profileMenu.style.display === "block") {
+        profileMenu.style.display = "none";
+      } else {
+        profileMenu.style.display = "block";
+      }
+    });
+
+    // Ocultar menú si se hace clic fuera
+    document.addEventListener("click", (e) => {
+      if (!document.getElementById("profile-container").contains(e.target)) {
+        profileMenu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

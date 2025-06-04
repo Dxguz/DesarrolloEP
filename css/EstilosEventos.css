@@ -1,0 +1,205 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4fff9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --------------------- */
+/* Banner superior       */
+/* --------------------- */
+
+.top-banner {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.top-banner h2 {
+  margin-bottom: 0.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nav-menu a button {
+  background-color: #ffffff;
+  color: #2e7d32;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu a button:hover {
+  background-color: #c8e6c9;
+  transform: scale(1.05);
+}
+
+/* ---------------------- */
+/* Botón de perfil */
+/* ---------------------- */
+
+.profile-button-container {
+  position: relative;
+}
+
+.profile-button {
+  background-color: #ffffff;
+  color: #2e7d32;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.profile-button:hover {
+  background-color: #c8e6c9;
+}
+
+.profile-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 10;
+}
+
+.profile-menu a {
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.profile-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* --------------------- */
+/* Contenido principal */
+/* --------------------- */
+
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.main-content h1 {
+  font-size: 2.2rem;
+  color: #1b5e20;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* --------------------- */
+/* Tarjetas de evento */
+/* --------------------- */
+
+.evento-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.evento-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.evento-info {
+  padding: 1.5rem;
+}
+
+.evento-info h2 {
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.evento-info .fecha-lugar {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.evento-info p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* --------------------- */
+/* Responsive (tablet y escritorio) */
+/* --------------------- */
+
+@media (min-width: 768px) {
+  .evento-card {
+    flex-direction: row;
+    height: 250px;
+  }
+
+  .evento-img {
+    width: 300px;
+    height: 100%;
+  }
+
+  .evento-info {
+    padding: 2rem;
+  }
+}
+
+/* --------------------- */
+/* Animación leve */
+/* --------------------- */
+
+.evento-card {
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
